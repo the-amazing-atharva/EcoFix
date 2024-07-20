@@ -110,7 +110,7 @@ main {
 }
 
 .page-header {
-  background-image: url("/covernew.jpg");
+  background-image: url("covernew.jpg");
   background-size: cover;
   background-position: center;
   position: relative;
