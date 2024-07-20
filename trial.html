@@ -3,11 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Background Image with Overlay</title>
+    <title>EchoFix: Community Solutions</title>
     <!-- Bootstrap CSS -->
     <link
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
     <style>
       body,
@@ -69,6 +73,123 @@
         padding: 10px 20px;
         font-size: 1.15rem;
       }
+
+      .bg-light {
+        background-color: #f8f9fa;
+      }
+
+      .text-primary {
+        color: #386641 !important;
+      }
+
+      .bg-primary {
+        background-color: #386641 !important;
+      }
+
+      .card {
+        border: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+      }
+
+      #how-it-works .rounded-circle {
+        transition: transform 0.3s ease;
+      }
+
+      #how-it-works .rounded-circle:hover {
+        transform: scale(1.1);
+      }
+
+      /* Call to Action Section */
+      #cta {
+        position: relative;
+        background-image: url("./covernew.jpg");
+        background-size: cover;
+        background-position: center;
+        color: white;
+      }
+
+      #cta::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+
+      #cta .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      #cta .btn-light {
+        color: #386641;
+        font-weight: bold;
+      }
+
+      #cta .btn-outline-light:hover {
+        color: #386641;
+      }
+
+      /* Features */
+      #features .card {
+        height: 100%;
+      }
+
+      #features .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      /* Footer Styles */
+      footer {
+        background-color: #1e3723;
+      }
+
+      footer h5 {
+        color: #a7c957;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+      }
+
+      footer a {
+        color: #f2e8cf !important;
+        transition: color 0.3s ease;
+      }
+
+      footer a:hover {
+        color: #a7c957 !important;
+        text-decoration: none;
+      }
+
+      footer .list-inline-item {
+        margin-right: 1rem;
+      }
+
+      footer hr {
+        border-color: #a7c957;
+      }
+
+      /* Hover effects for social icons */
+      footer .fab {
+        transition: transform 0.3s ease;
+      }
+
+      footer .fab:hover {
+        transform: scale(1.2);
+      }
+
+      /* Team member names */
+      footer ul li {
+        margin-bottom: 0.5rem;
+      }
     </style>
   </head>
   <body>
@@ -82,10 +203,180 @@
         </p>
         <div class="d-flex justify-content-center">
           <a href="index.html" class="btn btn-primary mx-2">Submit Issue</a>
-          <a href="#" class="btn btn-secondary mx-2">Learn More</a>
+          <a href="#features" class="btn btn-secondary mx-2">Learn More</a>
         </div>
       </div>
     </div>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-5">Features</h2>
+        <div class="row">
+          <div class="col-md-3 mb-4">
+            <div class="card h-100">
+              <div class="card-body text-center">
+                <i class="fas fa-map-marker-alt fa-3x mb-3 text-primary"></i>
+                <h5 class="card-title">Geolocation</h5>
+                <p class="card-text">
+                  Automatically detect your location for accurate reporting.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-4">
+            <div class="card h-100">
+              <div class="card-body text-center">
+                <i class="fas fa-camera fa-3x mb-3 text-primary"></i>
+                <h5 class="card-title">Photo Upload</h5>
+                <p class="card-text">
+                  Attach images to your reports for better understanding.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-4">
+            <div class="card h-100">
+              <div class="card-body text-center">
+                <i class="fas fa-chart-line fa-3x mb-3 text-primary"></i>
+                <h5 class="card-title">Issue Tracking</h5>
+                <p class="card-text">
+                  Follow the progress of reported issues in real-time.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-4">
+            <div class="card h-100">
+              <div class="card-body text-center">
+                <i class="fas fa-trophy fa-3x mb-3 text-primary"></i>
+                <h5 class="card-title">Leaderboard</h5>
+                <p class="card-text">
+                  Recognize top contributors and encourage community engagement.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section id="cta" class="py-5 bg-image-overlay">
+      <div class="container text-center">
+        <h2 class="mb-4">Ready to make a difference in your community?</h2>
+        <p class="lead mb-4">
+          Join EcoFix today and start reporting issues that matter!
+        </p>
+        <a href="index.html" class="btn btn-light btn-lg mr-3"
+          >Report an Issue</a
+        >
+        <a href="#" class="btn btn-outline-light btn-lg">Learn More</a>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">How It Works</h2>
+        <div class="row">
+          <div class="col-md-4 text-center mb-4">
+            <div
+              class="rounded-circle bg-primary text-white d-inline-flex justify-content-center align-items-center mb-3"
+              style="width: 80px; height: 80px"
+            >
+              <h3>1</h3>
+            </div>
+            <h4>Report an Issue</h4>
+            <p>Submit details about the environmental issue you've noticed.</p>
+          </div>
+          <div class="col-md-4 text-center mb-4">
+            <div
+              class="rounded-circle bg-primary text-white d-inline-flex justify-content-center align-items-center mb-3"
+              style="width: 80px; height: 80px"
+            >
+              <h3>2</h3>
+            </div>
+            <h4>We Notify Authorities</h4>
+            <p>
+              Our system alerts the relevant local authorities about the issue.
+            </p>
+          </div>
+          <div class="col-md-4 text-center mb-4">
+            <div
+              class="rounded-circle bg-primary text-white d-inline-flex justify-content-center align-items-center mb-3"
+              style="width: 80px; height: 80px"
+            >
+              <h3>3</h3>
+            </div>
+            <h4>Track Progress</h4>
+            <p>Follow the status updates as the issue gets resolved.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 mb-4 mb-md-0">
+            <h5>About EcoFix</h5>
+            <p>
+              EcoFix is a community-driven platform empowering citizens to
+              report and track local environmental issues, fostering
+              collaboration between residents and authorities for a cleaner,
+              safer environment.
+            </p>
+          </div>
+          <div class="col-md-3 mb-4 mb-md-0">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="trial.html" class="text-light">Home</a></li>
+              <li>
+                <a href="index.html" class="text-light">Report an Issue</a>
+              </li>
+              <li><a href="#" class="text-light">View Issues</a></li>
+              <li><a href="#" class="text-light">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-4 mb-md-0">
+            <h5>Our Team</h5>
+            <ul class="list-unstyled">
+              <li>Atharva Salitri</li>
+              <li>Shrey Rupnavar</li>
+              <li>Tanishq Thuse</li>
+              <li>Anjali Shivshete</li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h5>Connect With Us</h5>
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="#" class="text-light"
+                  ><i class="fab fa-facebook fa-2x"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#" class="text-light"
+                  ><i class="fab fa-twitter fa-2x"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#" class="text-light"
+                  ><i class="fab fa-instagram fa-2x"></i
+                ></a>
+              </li>
+            </ul>
+            <p>Email: info@ecofix.com<br />Phone: (123) 456-7890</p>
+          </div>
+        </div>
+        <hr class="bg-light" />
+        <div class="text-center mt-4">
+          <p>&copy; 2024 EcoFix. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
 
     <!-- Bootstrap JS and dependencies (optional) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
