@@ -3,340 +3,384 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EcoFix - Community Issues Submission</title>
+    <title>EchoFix: Community Solutions</title>
+    <!-- Bootstrap CSS -->
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
     <style>
-      :root {
-        --primary-color: #386641;
-        --primary-light: #6a994e;
-        --primary-dark: #2d5232;
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+      }
+      .bg-image {
+        background-image: url("./covernew.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        position: relative;
+      }
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.5
+        ); /* Black overlay with 50% opacity */
+      }
+      .content {
+        position: relative;
+        z-index: 1;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+      }
+      h1 {
+        color: #fff;
+        font-size: 6.5rem;
+      }
+      .btn-primary {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 1.15rem;
+        background-color: #386641;
+        border-color: #fff;
+      }
+      .btn-primary:hover {
+        background-color: #2a442f;
+        border-color: #dfdfdf;
+      }
+      .btn-secondary {
+        color: black;
+        background-color: #fff;
+        border-color: #1d3a23;
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 1.15rem;
       }
 
-      body {
-        font-family: "Arial", sans-serif;
+      .bg-light {
         background-color: #f8f9fa;
       }
 
-      .navbar {
-        background-color: var(--primary-color);
-        padding: 15px 0; /* Increased padding to make navbar thicker */
+      .text-primary {
+        color: #386641 !important;
       }
 
-      .navbar-brand,
-      .nav-link {
-        color: white !important;
+      .bg-primary {
+        background-color: #386641 !important;
       }
 
-      .nav-link:hover {
+      .card {
+        border: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+      }
+
+      #how-it-works .rounded-circle {
+        transition: transform 0.3s ease;
+      }
+
+      #how-it-works .rounded-circle:hover {
+        transform: scale(1.1);
+      }
+
+      /* Call to Action Section */
+      #cta {
+        position: relative;
+        background-image: url("./covernew.jpg");
+        background-size: cover;
+        background-position: center;
+        color: white;
+      }
+
+      #cta::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+
+      #cta .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      #cta .btn-light {
+        color: #386641;
+        font-weight: bold;
+      }
+
+      #cta .btn-outline-light:hover {
+        color: #386641;
+      }
+
+      /* Features */
+      #features .card {
+        height: 100%;
+      }
+
+      #features .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      /* Footer Styles */
+      footer {
+        background-color: #1e3723;
+      }
+
+      footer h5 {
+        color: #a7c957;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+      }
+
+      footer a {
+        color: #f2e8cf !important;
+        transition: color 0.3s ease;
+      }
+
+      footer a:hover {
         color: #a7c957 !important;
+        text-decoration: none;
       }
 
-      main {
-        padding: 50px 0;
+      footer .list-inline-item {
+        margin-right: 1rem;
       }
 
-      .navbar-text {
-        margin-left: 20px; /* Adjust this value as needed */
-        margin-right: 20px; /* Adjust this value as needed */
+      footer hr {
+        border-color: #a7c957;
       }
 
-      .navbar {
-        background-image: url("covernew.jpg");
-        background-size: cover;
-        background-position: center;
-        position: relative;
-        padding: 15px 0;
+      /* Hover effects for social icons */
+      footer .fab {
+        transition: transform 0.3s ease;
       }
 
-      .navbar::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 1;
+      footer .fab:hover {
+        transform: scale(1.2);
       }
 
-      .navbar-brand,
-      .navbar-text,
-      .nav-link,
-      .navbar-toggler {
-        position: relative;
-        z-index: 2;
-        color: white !important;
-      }
-
-      .navbar-text {
-        font-weight: bold;
-        font-size: 1.2rem;
-      }
-      .form-container {
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        padding: 30px;
-      }
-
-      .form-label {
-        font-weight: bold;
-        color: var(--primary-dark);
-      }
-
-      .btn-primary {
-        background-color: var(--primary-color);
-        border-color: var(--primary-color);
-      }
-
-      .btn-primary:hover {
-        background-color: var(--primary-dark);
-        border-color: var(--primary-dark);
-      }
-
-      .btn-outline-secondary {
-        color: var(--primary-color);
-        border-color: var(--primary-color);
-      }
-
-      .btn-outline-secondary:hover {
-        background-color: var(--primary-color);
-        color: white;
-      }
-
-      .illustration-container {
-        position: relative;
-        height: 100%;
-      }
-
-      .illustration {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 10px;
-      }
-
-      .page-header {
-        background-image: url("covernew.jpg");
-        background-size: cover;
-        background-position: center;
-        position: relative;
-        padding: 100px 0;
-        margin-bottom: 50px;
-      }
-
-      .page-header::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.5);
-      }
-
-      .page-header h1 {
-        color: white;
-        position: relative;
-        z-index: 1;
+      /* Team member names */
+      footer ul li {
+        margin-bottom: 0.5rem;
       }
     </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="bg-image">
+      <div class="overlay"></div>
+      <div class="content">
+        <h1>Welcome to EcoFix</h1>
+        <p>
+          Report your local issues online and actively participate in making
+          your environment a better place .
+        </p>
+        <div class="d-flex justify-content-center">
+          <a href="submit.html" class="btn btn-primary mx-2">Submit Issue</a>
+          <a href="#features" class="btn btn-secondary mx-2">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5 bg-light">
       <div class="container">
-        <a class="navbar-brand" href="#">EcoFix</a>
-        <span class="navbar-text mx-auto text-center"
-          >Community Issues Submission Page</span
-        >
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="collapse navbar-collapse justify-content-end"
-          id="navbarNav"
-        >
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="trial.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="leaderboard.html">Leaderboard</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="issues.html">Issues</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <main class="container">
-      <div class="row">
-        <div class="col-md-6 mb-4">
-          <div class="illustration-container">
-            <img src="ilus.jpg" alt="Illustration" class="illustration" />
+        <h2 class="text-center mb-5">Features</h2>
+        <div class="row">
+          <div class="col-md-3 mb-4">
+            <div class="card h-100">
+              <div class="card-body text-center">
+                <i class="fas fa-map-marker-alt fa-3x mb-3 text-primary"></i>
+                <h5 class="card-title">Geolocation</h5>
+                <p class="card-text">
+                  Automatically detect your location for accurate reporting.
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="col-md-6">
-          <div class="form-container">
-            <form id="issue-form" enctype="multipart/form-data">
-              <div class="mb-3">
-                <label for="username" class="form-label"
-                  >Enter your name:</label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="username"
-                  name="username"
-                  placeholder="Username"
-                  required
-                />
+          <div class="col-md-3 mb-4">
+            <div class="card h-100">
+              <div class="card-body text-center">
+                <i class="fas fa-camera fa-3x mb-3 text-primary"></i>
+                <h5 class="card-title">Photo Upload</h5>
+                <p class="card-text">
+                  Attach images to your reports for better understanding.
+                </p>
               </div>
-
-              <div class="mb-3">
-                <label for="issue-category" class="form-label"
-                  >Issue Category:</label
-                >
-                <select
-                  class="form-select"
-                  id="issue-category"
-                  name="issue-category"
-                  required
-                >
-                  <option value="">Select an issue type</option>
-                  <option value="garbage">Excess Garbage</option>
-                  <option value="pothole">Pothole</option>
-                  <option value="streetlight">Broken Streetlight</option>
-                  <option value="graffiti">Graffiti</option>
-                  <option value="other">Other</option>
-                </select>
+            </div>
+          </div>
+          <div class="col-md-3 mb-4">
+            <div class="card h-100">
+              <div class="card-body text-center">
+                <i class="fas fa-chart-line fa-3x mb-3 text-primary"></i>
+                <h5 class="card-title">Issue Tracking</h5>
+                <p class="card-text">
+                  Follow the progress of reported issues in real-time.
+                </p>
               </div>
-
-              <div class="mb-3">
-                <label for="description" class="form-label"
-                  >Describe your issue:</label
-                >
-                <textarea
-                  class="form-control"
-                  id="description"
-                  name="description"
-                  placeholder="Description of the issue"
-                  required
-                ></textarea>
+            </div>
+          </div>
+          <div class="col-md-3 mb-4">
+            <div class="card h-100">
+              <div class="card-body text-center">
+                <i class="fas fa-trophy fa-3x mb-3 text-primary"></i>
+                <h5 class="card-title">Leaderboard</h5>
+                <p class="card-text">
+                  Recognize top contributors and encourage community engagement.
+                </p>
               </div>
-
-              <div class="mb-3">
-                <label for="location" class="form-label"
-                  >Enter your location:</label
-                >
-                <div class="input-group">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="location"
-                    name="location"
-                    placeholder="Location"
-                    required
-                  />
-                  <button
-                    class="btn btn-outline-secondary"
-                    type="button"
-                    id="get-location"
-                  >
-                    <i class="fas fa-map-marker-alt"></i> Use My Location
-                  </button>
-                </div>
-                <div id="location-status" class="form-text"></div>
-              </div>
-
-              <div class="mb-3">
-                <label for="photo" class="form-label">Image of Issue:</label>
-                <input
-                  type="file"
-                  class="form-control"
-                  id="photo"
-                  name="photo"
-                  accept="image/*"
-                  required
-                />
-              </div>
-
-              <button type="submit" class="btn btn-primary">
-                Submit Issue
-              </button>
-            </form>
+            </div>
           </div>
         </div>
       </div>
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/main.js"></script>
-    <script>
-      document
-        .getElementById("get-location")
-        .addEventListener("click", function () {
-          const locationStatus = document.getElementById("location-status");
-          const locationInput = document.getElementById("location");
+    </section>
 
-          locationStatus.textContent = "Fetching location...";
+    <!-- Call to Action Section -->
+    <section id="cta" class="py-5 bg-image-overlay">
+      <div class="container text-center">
+        <h2 class="mb-4">Ready to make a difference in your community?</h2>
+        <p class="lead mb-4">
+          Join EcoFix today and start reporting issues that matter!
+        </p>
+        <a href="index.html" class="btn btn-light btn-lg mr-3"
+          >Report an Issue</a
+        >
+        <a href="#" class="btn btn-outline-light btn-lg">Learn More</a>
+      </div>
+    </section>
 
-          if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(
-              function (position) {
-                const latitude = position.coords.latitude;
-                const longitude = position.coords.longitude;
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">How It Works</h2>
+        <div class="row">
+          <div class="col-md-4 text-center mb-4">
+            <div
+              class="rounded-circle bg-primary text-white d-inline-flex justify-content-center align-items-center mb-3"
+              style="width: 80px; height: 80px"
+            >
+              <h3>1</h3>
+            </div>
+            <h4>Report an Issue</h4>
+            <p>Submit details about the environmental issue you've noticed.</p>
+          </div>
+          <div class="col-md-4 text-center mb-4">
+            <div
+              class="rounded-circle bg-primary text-white d-inline-flex justify-content-center align-items-center mb-3"
+              style="width: 80px; height: 80px"
+            >
+              <h3>2</h3>
+            </div>
+            <h4>We Notify Authorities</h4>
+            <p>
+              Our system alerts the relevant local authorities about the issue.
+            </p>
+          </div>
+          <div class="col-md-4 text-center mb-4">
+            <div
+              class="rounded-circle bg-primary text-white d-inline-flex justify-content-center align-items-center mb-3"
+              style="width: 80px; height: 80px"
+            >
+              <h3>3</h3>
+            </div>
+            <h4>Track Progress</h4>
+            <p>Follow the status updates as the issue gets resolved.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-                // Using OpenStreetMap's Nominatim API for reverse geocoding
-                fetch(
-                  `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude}&lon=${longitude}`
-                )
-                  .then((response) => response.json())
-                  .then((data) => {
-                    if (data.display_name) {
-                      locationInput.value = data.display_name;
-                      locationStatus.textContent =
-                        "Location fetched successfully!";
-                    } else {
-                      locationInput.value = `${latitude}, ${longitude}`;
-                      locationStatus.textContent =
-                        "Exact address not found. Coordinates used instead.";
-                    }
-                  })
-                  .catch((error) => {
-                    console.error("Error fetching location name:", error);
-                    locationInput.value = `${latitude}, ${longitude}`;
-                    locationStatus.textContent =
-                      "Could not fetch exact location. Coordinates used instead.";
-                  });
-              },
-              function (error) {
-                console.error("Geolocation error:", error);
-                locationStatus.textContent =
-                  "Unable to retrieve your location.";
-              }
-            );
-          } else {
-            locationStatus.textContent =
-              "Geolocation is not supported by this browser.";
-          }
-        });
-    </script>
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 mb-4 mb-md-0">
+            <h5>About EcoFix</h5>
+            <p>
+              EcoFix is a community-driven platform empowering citizens to
+              report and track local environmental issues, fostering
+              collaboration between residents and authorities for a cleaner,
+              safer environment.
+            </p>
+          </div>
+          <div class="col-md-3 mb-4 mb-md-0">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="index.html" class="text-light">Home</a></li>
+              <li>
+                <a href="submit.html" class="text-light">Report an Issue</a>
+              </li>
+              <li><a href="#" class="text-light">View Issues</a></li>
+              <li><a href="#" class="text-light">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-4 mb-md-0">
+            <h5>Our Team</h5>
+            <ul class="list-unstyled">
+              <li>Atharva Salitri</li>
+              <li>Shrey Rupnavar</li>
+              <li>Tanishq Thuse</li>
+              <li>Anjali Shivshete</li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h5>Connect With Us</h5>
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="#" class="text-light"
+                  ><i class="fab fa-facebook fa-2x"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#" class="text-light"
+                  ><i class="fab fa-twitter fa-2x"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#" class="text-light"
+                  ><i class="fab fa-instagram fa-2x"></i
+                ></a>
+              </li>
+            </ul>
+            <p>Email: info@ecofix.com<br />Phone: (123) 456-7890</p>
+          </div>
+        </div>
+        <hr class="bg-light" />
+        <div class="text-center mt-4">
+          <p>&copy; 2024 EcoFix. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies (optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>
