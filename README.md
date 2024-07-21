@@ -1,32 +1,66 @@
-# EcoFix - Community Issues Reporting Platform
+# EcoFix - Community Issues Reporting Platform 🌍📝
 
-## Overview
+## Overview 🌱
 
-EcoFix is a community-driven platform that empowers citizens to report and track local environmental issues. By fostering collaboration between residents and local authorities, EcoFix aims to create a cleaner, safer, and more sustainable environment.
+**EcoFix** is a community-driven platform that empowers citizens to report and track local environmental issues. By fostering collaboration between residents and local authorities, EcoFix aims to create a cleaner, safer, and more sustainable environment.
 
-## Features
+
+## Features 🔧
 
 - **Geolocation**: Automatically detect your location for accurate reporting.
 - **Photo Upload**: Attach images to your reports for better understanding.
 - **Issue Tracking**: Follow the progress of reported issues in real-time. (in-progress)
 - **Leaderboard**: Recognize top contributors and encourage community engagement.(in-progress)
+  
 
-## Technologies Used
+## Technologies Used 💻
 
 - HTML, CSS, JavaScript
 - Bootstrap 5 for responsive design
 - Font Awesome for icons
 - OpenStreetMap API for geolocation
+- node.js and npm for database and leaderboard (in-progress)
+  
 
-## Setup Instructions
+## Screenshots 📸
 
-### Prerequisites
+### Working Model 🖥️
+
+- Home Page
+  
+![image](https://github.com/user-attachments/assets/6a6d2926-04c8-4333-b567-c9aaac16c41e)
+
+- Submit Page
+  
+![image](https://github.com/user-attachments/assets/c4fd084e-99fb-4821-a7fb-debd5cdb1cbf)
+
+
+### In Progress ⚙️
+
+- Issues Page
+
+![image](https://github.com/user-attachments/assets/5aa686d5-4331-474f-8a89-79ba3b6997aa)
+
+- Leaderboard Page
+  
+![image](https://github.com/user-attachments/assets/e364e95d-f150-4924-af1a-6f52645a2f91)
+
+- JSON Database
+
+![image](https://github.com/user-attachments/assets/84c2990f-ddad-4993-915c-980a97af87c4)
+
+
+
+## Setup Instructions ⚙️
+
+### Prerequisites 📋
 
 - A web browser (e.g., Chrome, Firefox)
 - An IDE or text editor (e.g., VSCode, Sublime Text)
 - Node.js and npm (for package management and server setup)
+  
 
-### Installation
+### Installation 🛠️
 
 1. **Clone the repository**
 ```bash
@@ -39,7 +73,8 @@ cd ecofix
 npm install
 ```
 
-### Running the Project
+
+### Running the Project 🚀
 
 1. **Start the server**
 ```bash
@@ -49,7 +84,8 @@ npm start
 2. **Open the project in your browser**
 - Navigate to `http://localhost:3000`
 
-### Project Structure
+
+### Project Structure 📂
 
 - `index.html`: The main landing page.
 - `submit.html`: The page for submitting issues.
@@ -58,7 +94,8 @@ npm start
 - `js/submit.js`: JavaScript file for handling form submissions and geolocation.
 - `assets/`: Folder containing images and other assets.
 
-### File Descriptions
+
+### File Descriptions 📄
 
 #### HTML Files
 
@@ -79,9 +116,11 @@ npm start
 - **submit.js**
 - Handles form submissions, validates user input, and fetches user location using the Geolocation API and OpenStreetMap.
 
-## Usage Instructions
 
-### Submitting an Issue
+
+## Usage Instructions 📚
+
+### Submitting an Issue 📝
 
 1. **Navigate to the submission page**
 - Click on the "Submit Issue" button on the homepage or go to `http://localhost:3000/submit.html`.
@@ -96,7 +135,7 @@ npm start
 4. **Submit the form**
 - Click the "Submit Issue" button to send your report.
 
-### Viewing the Leaderboard
+### Viewing the Leaderboard 🏆
 
 1. **Navigate to the leaderboard page**
 - Click on the "Leaderboard" link in the navigation menu or go to `http://localhost:3000/leaderboard.html`.
@@ -104,7 +143,8 @@ npm start
 2. **View top contributors**
 - See the list of top contributors and their scores based on the issues they have reported and resolved.
 
-## Contribution Guidelines
+
+## Contribution Guidelines 🤝
 
 We welcome contributions to improve EcoFix! Here’s how you can help:
 
@@ -129,11 +169,13 @@ git push origin feature-branch-name
 
 6. **Create a pull request**
 
-## License
+
+## License 📜
 
 This project is licensed under the MIT License. See the `LICENSE` file for more details.
 
-## Contact
+
+## Contact 📞
 
 For any inquiries or support, please contact us at:
 
@@ -146,7 +188,8 @@ Connect with us on social media:
 - [Twitter](https://www.twitter.com)
 - [Instagram](https://www.instagram.com)
 
-## Acknowledgements
+
+## Acknowledgements 🙏
 
 - Special thanks to Hack To The Future Hackathon
 - Icons by Font Awesome.
@@ -154,4 +197,4 @@ Connect with us on social media:
 
 ---
 
-Thank you for using EcoFix! Together, we can make our environment better.
+Thank you for using **EcoFix!** Together, we can make our environment better 🌍✨.
