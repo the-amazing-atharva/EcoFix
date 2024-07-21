@@ -20,6 +20,7 @@
 - Font Awesome for icons
 - OpenStreetMap API for geolocation
 - node.js and npm for database and leaderboard (in-progress)
+- MongoDB and schemas for databse, leaderboard and issues implementation
   
 
 ## Screenshots 📸
@@ -49,6 +50,16 @@
 
 ![image](https://github.com/user-attachments/assets/84c2990f-ddad-4993-915c-980a97af87c4)
 
+
+## 🚧 Work in Progress 🚧
+
+The following features are currently under development and are located on a separate branch of the repository called **"in-progress"**:
+
+-   **Issues Page**: This page will allow users to view and report various environmental issues in their community. It is designed to provide a comprehensive overview of ongoing reports and their statuses.
+-   **Leaderboard Page**: This feature will showcase the top contributors in the EcoFix community, highlighting their efforts in reporting and resolving environmental issues.
+-   **JSON Database**: A structured database that will store all reported issues, user contributions, and related data, ensuring efficient data management and retrieval.
+
+Stay tuned for updates as we work to bring these features to life! 🚀
 
 
 ## Setup Instructions ⚙️
