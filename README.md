@@ -172,7 +172,7 @@ git push origin feature-branch-name
 
 ## License 📜
 
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
+This project is licensed under the MIT License. See the [`LICENSE`](https://github.com/the-amazing-atharva/EcoFix/blob/latest/LICENSE.txt) file for more details.
 
 
 ## Contact 📞
